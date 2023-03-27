@@ -31,6 +31,10 @@ export default function GyroReadings() {
     _subscribe();
     return () => _unsubscribe();
   }, []);
+
+  const { rotations, _unsubscribe, _subscribe, _slow, _fast, subscription } = useContext(GyroDataContext);
+  const { x, y, z } = rotations;
+
   return (
     <View>
       <Text>GyroReadings</Text>
